@@ -37,6 +37,6 @@ internal class MusicasPreferidas
         string nomeDoArquivo = $"musicas-favoritas-{Nome}.json";
 
         File.WriteAllText(nomeDoArquivo, json);
-        Console.WriteLine("O arquivo Json criado com sucesso!");
+        Console.WriteLine($"O arquivo Json criado com sucesso! {Path.GetFullPath(nomeDoArquivo)}");
     }
 }
