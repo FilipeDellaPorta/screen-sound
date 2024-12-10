@@ -23,6 +23,15 @@ using (HttpClient client = new HttpClient())
 
         musicasPreferidasDoDaniel.ExibirMusicasFavoritas();
 
+        var musicasPreferidasDaEmilly = new MusicasPreferidas("Emilly");
+        musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[500]);
+        musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[637]);
+        musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[428]);
+        musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[13]);
+        musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[71]);
+
+        musicasPreferidasDaEmilly.ExibirMusicasFavoritas();
+
     }
     catch (Exception ex)
     {
