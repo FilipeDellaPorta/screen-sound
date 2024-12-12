@@ -9,6 +9,7 @@ using (HttpClient client = new HttpClient())
         string resposta = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
         //Console.WriteLine(resposta);
         var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!;
+        musicas[0].ExibirDetalhesDaMusica();
         //LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
         //LinqOrder.ExibirListaDeArtistasOrdenados(musicas);
         //LinqFilter.FiltrarArtistasPorGeneroMusical(musicas, "rock");
@@ -23,15 +24,15 @@ using (HttpClient client = new HttpClient())
 
         //musicasPreferidasDoDaniel.ExibirMusicasFavoritas();
 
-        var musicasPreferidasDaEmilly = new MusicasPreferidas("Emilly");
-        musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[500]);
-        musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[637]);
-        musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[428]);
-        musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[13]);
-        musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[71]);
+        //var musicasPreferidasDaEmilly = new MusicasPreferidas("Emilly");
+        //musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[500]);
+        //musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[637]);
+        //musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[428]);
+        //musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[13]);
+        //musicasPreferidasDaEmilly.AdicionarMusicasFavoritas(musicas[71]);
 
-        musicasPreferidasDaEmilly.ExibirMusicasFavoritas();
-        musicasPreferidasDaEmilly.GerarArquivoJson();
+        //musicasPreferidasDaEmilly.ExibirMusicasFavoritas();
+        //musicasPreferidasDaEmilly.GerarArquivoJson();
 
     }
     catch (Exception ex)
