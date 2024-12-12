@@ -25,11 +25,24 @@ internal class LinqFilter
 
     public static void FiltrarMusicasDeUmArtista(List<Musica> musicas, string nomeDoArtista)
     {
-        var musicasDoArtista = musicas.Where(musica => musica.Artista.Equals(nomeDoArtista)).ToList();
+        var musicasDoArtista = musicas.Where(musica => musica.Artista!.Equals(nomeDoArtista)).ToList();
         Console.WriteLine(nomeDoArtista);
         foreach (var musica in musicasDoArtista)
         {
             Console.WriteLine($"- {musica.Nome}");
+        }
+    }
+
+    internal static void FiltrarMusicasEmCSharp(List<Musica> musicas)
+    {
+        var musicasEmCSharp = musicas
+            .Where(musica => musica.Tonalidade.Equals("C#"))
+            .Select(musica => musica.Nome)
+            .ToList();
+        Console.WriteLine("Músicas em C#:");
+        foreach(var musica in musicasEmCSharp)
+        {
+            Console.WriteLine($"- {musica}");
         }
     }
 }
